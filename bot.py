@@ -114,5 +114,8 @@ async def ehingamerules(ctx):
     view = RuleView()
     await ctx.send(embed=embed, view=view)
 
+    image_url = "https://i.postimg.cc/prb2FRjQ/IN-GAME-RULES.png"  # Replace with your actual Postimg URL
+    await ctx.send(image_url)
+
 # ------------------- RUN BOT -------------------
 bot.run(TOKEN)
