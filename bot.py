@@ -110,6 +110,10 @@ async def ehingamerules(ctx):
             "Rules may be updated at any time. You are responsible for staying informed of current policies. Ignorance of the rules is not an acceptable excuse."
         ),
 
+        image_url = "https://i.postimg.cc/prb2FRjQ/IN-GAME-RULES.png"  # Replace with your actual Postimg URL
+        await ctx.send(image_url)
+
+
         
         color=discord.Color.dark_blue()
     )
