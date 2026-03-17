@@ -69,10 +69,10 @@ rules = {
 class RuleSelect(discord.ui.Select):
     def __init__(self):
         options = [
-            discord.SelectOption(label="1-10 Game Rules", value="1-10", emoji="📕),
-            discord.SelectOption(label="11-20 Game Rules", value="11-20", emoji="📕),
-            discord.SelectOption(label="21-30 Game Rules", value="21-30", emoji="📕),
-            discord.SelectOption(label="31-40 Game Rules", value="31-40", emoji="📕),
+            discord.SelectOption(label="1-10 Game Rules", value="1-10", emoji="📕"),
+            discord.SelectOption(label="11-20 Game Rules", value="11-20", emoji="📕"),
+            discord.SelectOption(label="21-30 Game Rules", value="21-30", emoji="📕"),
+            discord.SelectOption(label="31-40 Game Rules", value="31-40", emoji="📕"),
         ]
         super().__init__(placeholder="Press Here For Game Rules", min_values=1, max_values=1, options=options)
 
