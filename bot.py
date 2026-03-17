@@ -93,7 +93,7 @@ class RuleView(View):
 
 # ------------------- POST RULES COMMAND -------------------
 @bot.command()
-async def ehrules(ctx):
+async def ehingamerules(ctx):
     embed = discord.Embed(
         title="📖 SRP | SERIOUS ROLEPLAY — General In-Game Rules",
         description=(
