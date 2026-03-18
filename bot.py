@@ -74,22 +74,32 @@ class RuleSelect(discord.ui.Select):
             discord.SelectOption(label="21-30 Game Rules", value="21-30", emoji="📕"),
             discord.SelectOption(label="31-40 Game Rules", value="31-40", emoji="📕"),
         ]
-        super().__init__(placeholder="Press Here For Game Rules", min_values=1, max_values=1, options=options)
+
+        super().__init__(
+            placeholder="Press Here For Game Rules",
+            min_values=1,
+            max_values=1,
+            options=options,
+            custom_id="rule_select_menu"  # 🔥 REQUIRED FOR PERSISTENT VIEWS
+        )
 
     async def callback(self, interaction: discord.Interaction):
         selected = self.values[0]
         rule_text = "\n".join(rules[selected])
+
         embed = discord.Embed(
             title=f"📖 SRP | {selected} Rules",
             description=rule_text,
             color=discord.Color.blue()
         )
-        # ✅ Respond properly to the interaction
-        await interaction.response.send_message(embed=embed, ephemeral=True)
+
+        # 🔥 Prevent timeout issues
+        await interaction.response.defer(ephemeral=True)
+        await interaction.followup.send(embed=embed)
 
 class RuleView(View):
     def __init__(self):
-        super().__init__()
+        super().__init__(timeout=None)  # 🔥 NEVER EXPIRES
         self.add_item(RuleSelect())
 
 # ------------------- POST RULES COMMAND -------------------
