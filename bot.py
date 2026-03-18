@@ -95,8 +95,7 @@ class RuleSelect(discord.ui.Select):
 
         # 🔥 Prevent timeout issues
         # ✅ This makes it visible ONLY to the person who clicked
-    await interaction.response.send_message(embed=embed, ephemeral=True)
-        await interaction.followup.send(embed=embed)
+        await interaction.response.send_message(embed=embed, ephemeral=True)
 
 class RuleView(View):
     def __init__(self):
